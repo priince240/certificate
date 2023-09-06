@@ -1,0 +1,116 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .body{
+            background-image:linear-gradient(to bottom right, lightblue , white)
+        }
+        .uplaod{
+            font-size:200px ;
+            font-family: cursive;
+            font-weight: bolder;
+            color: cadetblue;
+            font-stretch: ultra-expanded;
+
+        }
+        .rest{
+            font-size:150px ;
+            font-family: cursive;
+            font-weight: bolder;
+            color: rgb(25, 72, 73);
+            font-stretch: ultra-expanded;
+
+        }
+        .size{
+            background: transparent;
+            border: 20px double rgb(7, 7, 7);
+            border-radius: 10px;
+            font-size:30px ;
+            font-family: cursive;
+            font-weight: bolder;
+
+        }
+        .form{
+          margin: auto;
+          width:650px;
+          height:auto;
+
+        }
+    </style>
+  </head>
+  <body class="body">
+    <!-- navbar------ -->
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="/">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="signup/">signup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="login/">login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="table/">table</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="logout/">logout</a>
+              </li>
+           
+           
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- ---------------------- -->
+      <center><span class="uplaod">upload</span> <br><span class="rest">your file here</span></center>
+      <br><br><br><br>
+      <div class="form">
+        <form action="/" method="post" enctype="multipart/form-data">
+          {%csrf_token%}
+            <input type = "file" name ="file" class="size"><br/>
+            <br>
+            <center><input type="text" name="name" placeholder="enter your name" style="background: transparent;"></center>
+            <br><var></var>
+            <center><input type="date" name="date" style="background: transparent;"></center>
+            <br><br>
+            <center><button type="submit">upload</button></center>
+        </form>
+      </div>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    <br><br><br><br>
+    
+  
+    <!-- footer---------- -->
+    <div>
+        <div class="card bg-dark">
+            <div class="card-header text-white">
+              Quote
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0 text-white">
+                <p>A well-known quote, contained in a blockquote element.</p>
+                <footer class="blockquote-footer text-white">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+    </div>
+      <!-- ----------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>

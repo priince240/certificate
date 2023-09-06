@@ -1,0 +1,46 @@
+{%extends "index.html"%}
+{%block head%}
+<style>
+    .center{
+       margin: auto;
+       width: 400px;
+       height: auto;
+       font-family:cursive;
+       font-weight: bolder;
+       border: 3px solid black;
+       border-radius: 20px;
+       padding: 10px;    
+       margin-top: 50px;
+       padding-top: 10px; 
+       font-size: 20px;
+    }
+</style>
+{%endblock head%}
+{%block body%}
+<center><h1>login</h1></center>
+<div class="center">
+    <h2>
+        {%if form.non_field.errors%}
+        {%for error in form.non_field.errors%}
+        {{error}}
+        {%endfor%}
+        {%endif%}
+    </h2>
+    <h2>
+        {%if messages%}
+        {%for message in messages%}
+        <p style="color:rgb(36, 41, 29)">{{message}}</p>
+        {%endfor%}
+        {%endif%}
+    </h2>
+<form action="/login/" method="post">
+    {%csrf_token%}
+    <!-- {{data.as_p}} <br><br> -->
+ 
+    {%for i in data%}
+    {{i.name}} {{i}} <br> {{i.errors|striptags}} <br><br><br>
+    {%endfor%}
+    <center><button type="submit" style="background-color: rgb(165, 245, 165);"> submit</button></center>
+</form>
+</div>
+{%endblock body %}

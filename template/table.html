@@ -1,0 +1,76 @@
+{%extends "index.html"%}
+{%block head%}
+<style>
+    .tr{
+       text-align: center;
+        width: 800px;
+        height:auto;       
+        padding:20px;
+    }
+    .td{
+    
+        text-align: center;
+        width: 800px;
+        height:auto;       
+        padding:30px;
+        margin: 10px;
+        padding-left: 50px;
+    }
+    .tr:nth-child(even){
+        background:rgba(211, 208, 208, 0.75);
+    }
+    .tbody{
+        text-align: center;
+         width: 800px;
+         height:auto;       
+         padding:20px;
+         font-size:20px ;
+    }
+
+    .thead{
+       
+        text-align: center;
+         width: 800px;
+         height:auto;       
+         padding:20px;
+         font-size: 30px;
+         border-bottom: 3px solid black;
+    }
+  
+    
+    .firstdiv{
+        margin: auto;
+        margin-top: 50px;
+        width: 800px;
+        padding:10px;
+        border-radius: 20px;
+    }
+    
+</style>
+{%endblock head%}
+{%block body%}
+<div class="firstdiv">
+    <table>
+        <thead class="thead">
+            <th class="td">Name</th>
+            <th class="td">Upload_file</th>
+            <th class="td">Date</th>
+            <th class="td">Download</th>
+        </thead>
+        <tbody class="tbody">
+            {%for data in data%}
+            <tr class="tr">
+                <td class="td">{{data.name}}</td>
+                <td class="td">{{data.file}}</td>
+                <td class="td">{{data.date}}</td>
+                <td class="td"><a href="/download/{{data.id}}"><button style="background: transparent;border:0px">download</button></a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+{%endblock body %}
